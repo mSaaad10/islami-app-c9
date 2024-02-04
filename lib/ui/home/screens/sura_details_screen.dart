@@ -33,7 +33,6 @@ if(verses.isEmpty){
           title: Text(args.title),
         ),
         body: Card(
-          color: Colors.white,
           margin: EdgeInsets.all(26),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(40)
