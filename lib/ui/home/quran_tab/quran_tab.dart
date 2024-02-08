@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c10_friday/ui/home/quran_tab/sura_name.dart';
-import 'package:islami_c10_friday/ui/home/screens/sura_details_screen.dart';
 
 class QuranTab extends StatelessWidget {
 
@@ -136,15 +135,31 @@ class QuranTab extends StatelessWidget {
         Expanded(
             flex: 1,
             child: Image.asset('assets/images/quran_header_image.png')),
+        Text(
+          'Chapter Name',
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
+        Container(
+          width: double.infinity,
+          height: 2,
+          color: Theme.of(context).primaryColor,
+        ),
         Expanded(
             flex: 3,
-            child: ListView.separated(separatorBuilder: (context, index) => Container(
-         margin: EdgeInsets.symmetric(horizontal: 40),
-          height: 2,
-          width: double.infinity,
-          color: Color(0xFFB7935F),
-        ),itemBuilder: (context, index) => SuraName(suraName: suraNames[index],index: index,),itemCount: suraNames.length,)
-        )],
+            child: ListView.separated(
+              separatorBuilder: (context, index) => Container(
+                margin: EdgeInsets.symmetric(horizontal: 40),
+                height: 2,
+                width: double.infinity,
+                color: Theme.of(context).dividerColor,
+              ),
+              itemBuilder: (context, index) => SuraName(
+                suraName: suraNames[index],
+                index: index,
+              ),
+              itemCount: suraNames.length,
+            ))
+      ],
     );
   }
 }

@@ -12,16 +12,15 @@ class SuraName extends StatelessWidget  {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        Navigator.pushNamed(context, SuraDetailsScreen.routeName,
-          arguments: SuraArgs(title: suraName, index: index)
-        );
-      },
-      child: Container(
-       // margin: EdgeInsets.symmetric(horizontal: 40),
+        onTap: () {
+          Navigator.pushNamed(context, SuraDetailsScreen.routeName,
+              arguments: SuraArgs(title: suraName, index: index));
+        },
+        child: Container(
+          // margin: EdgeInsets.symmetric(horizontal: 40),
           alignment: Alignment.center,
-          child: Text(suraName, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),)),
-    );
+          child: Text(suraName, style: Theme.of(context).textTheme.titleMedium),
+        ));
   }
 }
 class SuraArgs{
